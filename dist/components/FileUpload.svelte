@@ -36,3 +36,6 @@ async function handleUpload() {
 		/></svg
 	>
 </label>
+
+<style>/* empty file to keep development from breaking */
+</style>

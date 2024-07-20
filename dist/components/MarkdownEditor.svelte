@@ -80,3 +80,6 @@ async function handleNewImage(event) {
 		{/if}
 	</div>
 </div>
+
+<style>/* empty file to keep development from breaking */
+</style>
