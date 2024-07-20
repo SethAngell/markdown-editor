@@ -1,11 +1,28 @@
 {
-	"name": "markdown-editor",
-	"version": "0.0.1",
-	"private": true,
+	"name": "@sethangell/doublel-ui",
+	"license": "MIT",
+	"version": "0.1.0",
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		},
+		"./MarkdownEditor.svelte": {
+			"types": "./dist/components/MarkdownEditor.svelte.d.ts",
+			"svelte": "./dist/components/MarkdownEditor.svelte"
+		}
+	},
+	"private": false,
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"package": "svelte-package",
+		"publish": "npm publish",
+		"deploy": "npm run package && npm run publish",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test": "vitest",
@@ -16,6 +33,7 @@
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@sveltejs/package": "^2.3.2",
 		"@tailwindcss/typography": "^0.5.13",
 		"@types/eslint": "^8.56.7",
 		"autoprefixer": "^10.4.19",
@@ -29,6 +47,7 @@
 		"prettier-plugin-tailwindcss": "^0.6.4",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
+		"svelte-package": "^0.1.0",
 		"tailwindcss": "^3.4.4",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",

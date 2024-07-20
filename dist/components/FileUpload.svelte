@@ -1,22 +1,19 @@
-<script lang="ts">
-	import { createEventDispatcher } from 'svelte';
-
-	export let fileUploadCallback: Function;
-	const dispatch = createEventDispatcher();
-	let fileInput: HTMLInputElement;
-
-	async function handleUpload() {
-		console.log('called');
-		if (fileInput.files) {
-			const file = fileInput.files[0];
-			const url = await fileUploadCallback(file);
-			console.log(url);
-			dispatch('upload', {
-				url: url
-			});
-		}
-		fileInput.value = '';
-	}
+<script>import { createEventDispatcher } from "svelte";
+export let fileUploadCallback;
+const dispatch = createEventDispatcher();
+let fileInput;
+async function handleUpload() {
+  console.log("called");
+  if (fileInput.files) {
+    const file = fileInput.files[0];
+    const url = await fileUploadCallback(file);
+    console.log(url);
+    dispatch("upload", {
+      url
+    });
+  }
+  fileInput.value = "";
+}
 </script>
 
 <input
