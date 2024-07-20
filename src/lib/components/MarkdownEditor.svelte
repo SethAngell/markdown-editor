@@ -93,3 +93,7 @@
 		{/if}
 	</div>
 </div>
+
+<style>
+	@import './prod.css';
+</style>

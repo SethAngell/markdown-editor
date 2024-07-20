@@ -39,3 +39,7 @@
 		/></svg
 	>
 </label>
+
+<style>
+	@import './prod.css';
+</style>
