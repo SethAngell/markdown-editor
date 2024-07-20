@@ -39,7 +39,3 @@
 		/></svg
 	>
 </label>
-
-<style>
-	@import './prod.css' scoped;
-</style>

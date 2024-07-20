@@ -60,7 +60,7 @@
 
 <div id="editor" class="w-full">
 	<div id="tabs" class="space-between flex w-full flex-row border-2 border-slate-900 pr-2">
-		<div class="flex w-full flex-row">
+		<div id="form-controls" class="flex w-full flex-row">
 			<span
 				class="border-r-2 border-slate-900 p-2 {edit ? 'bg-slate-900 text-slate-50' : ''}"
 				role="button"
@@ -98,7 +98,3 @@
 		{/if}
 	</div>
 </div>
-
-<style>
-	@import './prod.css' scoped;
-</style>
