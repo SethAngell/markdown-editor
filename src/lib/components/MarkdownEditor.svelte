@@ -89,7 +89,12 @@
 				bind:this={textCanvas}
 			></textarea>
 		{:else}
-			<div id="preview-pane" class="prose h-full w-full p-2">{@html renderedText}</div>
+			<div
+				id="preview-pane"
+				class="mx-auto flex h-full w-full flex-row items-center justify-center rounded-b-sm border-2 border-t-0 border-slate-900 p-2"
+			>
+				<div id="output" class="prose">{@html renderedText}</div>
+			</div>
 		{/if}
 	</div>
 </div>
