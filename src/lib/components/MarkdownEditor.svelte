@@ -100,5 +100,5 @@
 </div>
 
 <style>
-	@import './prod.css';
+	@import './prod.css' scoped;
 </style>
