@@ -37,6 +37,6 @@
 
 <style>
 	.upload-button {
-		@apply hover:fill-900 focus:fill-900 flex w-6 flex-col items-center justify-center fill-slate-600;
+		@apply flex w-6 flex-col items-center justify-center fill-slate-600 hover:fill-slate-900 focus:fill-slate-900;
 	}
 </style>
