@@ -86,7 +86,7 @@
 			></textarea>
 		{:else}
 			<div id="preview-pane">
-				<div id="output" class="rendered-content rendered">{@html renderedText}</div>
+				<div id="output" class="rendered-content">{@html renderedText}</div>
 			</div>
 		{/if}
 	</div>
@@ -105,7 +105,7 @@
 	}
 
 	.editor-tab {
-		@apply border-r-2 border-slate-900 p-2;
+		@apply border-r-2 border-slate-900 p-2 text-red-500;
 	}
 
 	.editor-tab-selected {
