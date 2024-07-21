@@ -58,18 +58,20 @@
 	}
 </script>
 
-<div id="editor" class="w-full">
-	<div id="tabs" class="space-between flex w-full flex-row border-2 border-slate-900 pr-2">
-		<div id="form-controls" class="flex w-full flex-row">
+<div id="editor">
+	<div id="tabs">
+		<div id="form-controls">
 			<span
-				class="border-r-2 border-slate-900 p-2 {edit ? 'bg-slate-900 text-slate-50' : ''}"
+				class:editor-tab-selected={edit}
+				class:editor-tab={!edit}
 				role="button"
 				tabindex="0"
 				on:keydown={showEdit}
 				on:click={showEdit}>Edit</span
 			>
 			<span
-				class="border-r-2 border-slate-900 p-2 {edit ? '' : 'bg-slate-900 text-slate-50'}"
+				class:editor-tab-selected={!edit}
+				class:editor-tab={edit}
 				role="button"
 				tabindex="0"
 				on:keydown={showEdit}
@@ -78,23 +80,45 @@
 		</div>
 		<FileUpload {fileUploadCallback} on:upload={handleNewImage}></FileUpload>
 	</div>
-	<div id="blocks" class="w-full">
+	<div id="blocks">
 		{#if edit}
-			<textarea
-				id="edit-pane"
-				class="w-full resize-none rounded-b-sm border-2 border-t-0 border-slate-900 p-2 font-mono focus:outline-none"
-				cols="120"
-				rows="30"
-				bind:value={mdText}
-				bind:this={textCanvas}
+			<textarea id="edit-pane" cols="120" rows="30" bind:value={mdText} bind:this={textCanvas}
 			></textarea>
 		{:else}
-			<div
-				id="preview-pane"
-				class="mx-auto flex h-full w-full flex-row items-center justify-center rounded-b-sm border-2 border-t-0 border-slate-900 p-2"
-			>
-				<div id="output" class="prose">{@html renderedText}</div>
+			<div id="preview-pane">
+				<div id="output" class="rendered-content rendered">{@html renderedText}</div>
 			</div>
 		{/if}
 	</div>
 </div>
+
+<style>
+	#blocks,
+	#editor {
+		@apply w-full;
+	}
+	#tabs {
+		@apply flex w-full flex-row justify-between border-2 border-slate-900 pr-2;
+	}
+	#form-controls {
+		@apply flex w-full flex-row;
+	}
+
+	.editor-tab {
+		@apply border-r-2 border-slate-900 p-2;
+	}
+
+	.editor-tab-selected {
+		@apply border-r-2 border-slate-900 bg-slate-900 p-2 text-slate-50;
+	}
+	#edit-pane {
+		@apply w-full resize-none rounded-b-sm border-2 border-t-0 border-slate-900 p-2 font-mono focus:outline-none;
+	}
+	#preview-pane {
+		@apply mx-auto flex h-full w-full flex-row items-center justify-center rounded-b-sm border-2 border-t-0 border-slate-900 p-2;
+	}
+
+	.rendered-content {
+		@apply rendered;
+	}
+</style>
